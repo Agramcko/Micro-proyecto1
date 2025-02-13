@@ -12,7 +12,7 @@ Body{
     background-color: black;
 }
 
-.wrapper{
+.envuelto{
     background-color: white;
     height: 37.5em;
     width: 37.5em;
@@ -66,4 +66,32 @@ Body{
     bottom: 1.87em;
     left: 1.87em;
     border-radius: 0 0 0 13em;
+}
+
+.simonsays::before{
+    position: absolute;
+    content: "";
+    background-color: black;
+    height: 13.75em;
+    width: 13.75em;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+}
+
+#count{
+    background-color: white;
+    font-size: 2.5em;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    height: 2em;
+    width: 3em;
+    display: grid;
+    place-items: center;
+    border-radius: 0.5em;
 }
