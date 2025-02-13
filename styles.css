@@ -5,11 +5,11 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family:"Roboto", serif;
+    font-family:"Roboto", Italic;
 }
 
 Body{
-    background-color: black;
+    background-color: rgb(95, 95, 95);
 }
 
 .envuelto{
@@ -96,5 +96,34 @@ Body{
     border-radius: 0.5em;
 }
 
+.oculto{
+    display: none;
+}
+
+.contenedor{
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100% ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor button {
+    background-color: white;
+    font-size: 1.2em;
+    border: none;
+    outline: none;
+    padding: 1em 2em;
+    border-radius: 0.3em;
+    cursor: pointer;
+}
+
+.contenedor p{
+    font-size: 2em;
+}
 
 

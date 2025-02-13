@@ -90,12 +90,12 @@ colorPart.forEach((element) => {
             return false;
         }
         if(e.target.classList[0] == coloresRamdom[clickCount]){
-            e.target.style.backgroundColor = `${colores[coloresRamdom[clickCount]["new"]]
+            e.target.style.backgroundColor = `${colores[coloresRamdom[clickCount]]["new"]
 
             }`;
             await delay(500);
 
-            e.target.style.backgroundColor = `${colores[coloresRamdom[clickCount]["current"]]
+            e.target.style.backgroundColor = `${colores[coloresRamdom[clickCount]]["current"]
 
             }`;
             
@@ -107,7 +107,14 @@ colorPart.forEach((element) => {
             }
         }
         else{
-            lose();
+            perder();
         }
     });
 });
+
+const perder = () => {
+    resultado.innerHTML = `<span> Tu puntuación: </span> ${count}`;
+    // resultado.classList.remove("oculto")
+    empezarButton.innerText = "Jugar Otra vez";
+};
+
