@@ -8,3 +8,62 @@
     font-family:"Roboto", serif;
 }
 
+Body{
+    background-color: black;
+}
+
+.wrapper{
+    background-color: white;
+    height: 37.5em;
+    width: 37.5em;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 0.5em;
+}
+
+.simonsays{
+    height: 31.25em;
+    width: 31.25em;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.color-part{
+    height: 13.12em;
+    width: 13.12em;
+    position: absolute;
+}
+
+.verde{
+    background-color: green;
+    border-radius: 13em 0 0 0;
+    top: 1.87em;
+    left: 1.87em;
+}
+
+.rojo{
+    background-color: red;
+    border-radius: 0 13em 0 0;
+    top: 1.87em;
+    right: 1.87em;
+}
+
+.azul{
+    background-color: blue;
+    bottom: 1.87em;
+    right: 1.87em;
+    border-radius: 0 0 13em 0;
+}
+
+.amarillo{
+    background-color: yellow;
+    bottom: 1.87em;
+    left: 1.87em;
+    border-radius: 0 0 0 13em;
+}
