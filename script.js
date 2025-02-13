@@ -9,19 +9,19 @@ const envuelto = document.querySelector(".envuelto");
 
 const colores = {
     verde: {
-        current: "#008000",
+        current: "#068e10",
         new: "#11e711",
     },
     rojo: {
-        current: "#ff0000",
+        current: "#950310",
         new: "#fd2a2a",
     },
     azul: {
-        current: "#0000FF",
+        current: "#01019c",
         new: "#2062fc",
     },
     amarillo: {
-        current: "#FFFF00",
+        current: "#919110",
         new: "#fafa18",
     },
 };
@@ -39,6 +39,8 @@ empezarButton.addEventListener("click", () => {
     clickCount = 0;
     coloresRamdom = [];
     pathGeneratorBool = false;
+    envuelto.classList.remove("oculto");
+    contenedor.classList.add("oculto");
     pathGenerate();
 } )
 
@@ -114,7 +116,10 @@ colorPart.forEach((element) => {
 
 const perder = () => {
     resultado.innerHTML = `<span> Tu puntuación: </span> ${count}`;
-    // resultado.classList.remove("oculto")
+    resultado.classList.remove("oculto");
+    contenedor.classList.remove("oculto");
+    envuelto.classList.add("oculto");
     empezarButton.innerText = "Jugar Otra vez";
+    empezarButton.classList.remove("oculto");
 };
 

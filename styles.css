@@ -38,31 +38,32 @@ Body{
     height: 13.12em;
     width: 13.12em;
     position: absolute;
+    cursor: pointer;
 }
 
 .verde{
-    background-color: green;
+    background-color: #068e10;
     border-radius: 13em 0 0 0;
     top: 1.87em;
     left: 1.87em;
 }
 
 .rojo{
-    background-color: red;
+    background-color: #950310;
     border-radius: 0 13em 0 0;
     top: 1.87em;
     right: 1.87em;
 }
 
 .azul{
-    background-color: blue;
+    background-color: #01019c;
     bottom: 1.87em;
     right: 1.87em;
     border-radius: 0 0 13em 0;
 }
 
 .amarillo{
-    background-color: yellow;
+    background-color: #919110;
     bottom: 1.87em;
     left: 1.87em;
     border-radius: 0 0 0 13em;
@@ -124,6 +125,21 @@ Body{
 
 .contenedor p{
     font-size: 2em;
+    color: white;
+    margin-bottom: 1em;
 }
 
+.contenedor span{
+    font-weight: 600;
+}
 
+@media screen and (max-width: 600px){
+    body{
+        font-size: 10px;
+    }
+
+    .envuelto{
+        height: 35em;
+        width: 35em;
+    }
+}
