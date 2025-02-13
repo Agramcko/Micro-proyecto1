@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family:"Roboto", Italic;
+    font-family: "Roboto", Italic;
 }
 
-Body{
+Body {
     background-color: rgb(95, 95, 95);
 }
 
-.envuelto{
+.envuelto {
     background-color: white;
     height: 37.5em;
     width: 37.5em;
@@ -23,7 +23,7 @@ Body{
     border-radius: 0.5em;
 }
 
-.simonsays{
+.simonsays {
     height: 31.25em;
     width: 31.25em;
     background-color: black;
@@ -34,42 +34,42 @@ Body{
     left: 50%;
 }
 
-.color-part{
+.color-part {
     height: 13.12em;
     width: 13.12em;
     position: absolute;
     cursor: pointer;
 }
 
-.verde{
+.verde {
     background-color: #068e10;
     border-radius: 13em 0 0 0;
     top: 1.87em;
     left: 1.87em;
 }
 
-.rojo{
+.rojo {
     background-color: #950310;
     border-radius: 0 13em 0 0;
     top: 1.87em;
     right: 1.87em;
 }
 
-.azul{
+.azul {
     background-color: #01019c;
     bottom: 1.87em;
     right: 1.87em;
     border-radius: 0 0 13em 0;
 }
 
-.amarillo{
+.amarillo {
     background-color: #919110;
     bottom: 1.87em;
     left: 1.87em;
     border-radius: 0 0 0 13em;
 }
 
-.simonsays::before{
+.simonsays::before {
     position: absolute;
     content: "";
     background-color: black;
@@ -82,7 +82,7 @@ Body{
     border-radius: 50%;
 }
 
-#count{
+#count {
     background-color: white;
     font-size: 2.5em;
     position: absolute;
@@ -97,16 +97,16 @@ Body{
     border-radius: 0.5em;
 }
 
-.oculto{
+.oculto {
     display: none;
 }
 
-.contenedor{
+.contenedor {
     background-color: rgb(0, 0, 0);
     position: absolute;
     top: 0;
     height: 100%;
-    width: 100% ;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -114,31 +114,50 @@ Body{
 }
 
 .contenedor button {
-    background-color: white;
-    font-size: 1.2em;
-    border: none;
+    display: inline-block;
     outline: none;
-    padding: 1em 2em;
-    border-radius: 0.3em;
     cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    transition-property: background-color, border-color, color, box-shadow, filter;
+    transition-duration: .3s;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 16px 14px 18px;
+    color: #ffffff;
+    box-shadow: inset 0 0 0 2px #ffffff;
+    background-color: transparent;
+    height: 48px;
 }
 
-.contenedor p{
+.contenedor button:hover {
+    color: #fff;
+    background-color: #ff6600;
+}
+
+
+.contenedor p {
     font-size: 2em;
     color: white;
     margin-bottom: 1em;
 }
 
-.contenedor span{
+.contenedor span {
     font-weight: 600;
 }
 
-@media screen and (max-width: 600px){
-    body{
+@media screen and (max-width: 600px) {
+    body {
         font-size: 10px;
     }
 
-    .envuelto{
+    .envuelto {
         height: 35em;
         width: 35em;
     }
