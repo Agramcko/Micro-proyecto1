@@ -89,6 +89,25 @@ colorPart.forEach((element) => {
         if(pathGeneratorBool){
             return false;
         }
-        if(e.target.)
-    })
-})
+        if(e.target.classList[0] == coloresRamdom[clickCount]){
+            e.target.style.backgroundColor = `${colores[coloresRamdom[clickCount]["new"]]
+
+            }`;
+            await delay(500);
+
+            e.target.style.backgroundColor = `${colores[coloresRamdom[clickCount]["current"]]
+
+            }`;
+            
+            clickCount += 1;
+
+            if(clickCount == count) {
+                clickCount = 0;
+                pathGenerate();
+            }
+        }
+        else{
+            lose();
+        }
+    });
+});
