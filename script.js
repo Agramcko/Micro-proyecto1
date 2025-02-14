@@ -5,7 +5,12 @@ const empezarButton = document.querySelector("#empezar");
 const resultado = document.querySelector("#resultado");
 const envuelto = document.querySelector(".envuelto");
 
-
+const sonidos = {
+    verde: document.getElementById("sonido-verde"),
+    rojo: document.getElementById("sonido-rojo"),
+    azul: document.getElementById("sonido-azul"),
+    amarillo: document.getElementById("sonido-amarillo"),
+};
 
 const colores = {
     verde: {
@@ -26,9 +31,9 @@ const colores = {
     },
 };
 
-let coloresRamdom = []; 
+let coloresRamdom = [];
 let pathGeneratorBool = false;
-let count, 
+let count,
     clickCount = 0;
 
 
@@ -42,12 +47,12 @@ empezarButton.addEventListener("click", () => {
     envuelto.classList.remove("oculto");
     contenedor.classList.add("oculto");
     pathGenerate();
-} )
+})
 
 
 
 
-const pathGenerate = () =>  {
+const pathGenerate = () => {
     coloresRamdom.push(generateRandomValor(colores));
     count = coloresRamdom.length;
     pathGeneratorBool = true;
@@ -64,9 +69,9 @@ const generateRandomValor = (obj) => {
 
 
 
-const pathDecide = async(count) => {
+const pathDecide = async (count) => {
     contarValor.innerText = count;
-    for(let i of coloresRamdom){
+    for (let i of coloresRamdom) {
         let currentColor = document.querySelector(`.${i}`);
         await delay(500);
         currentColor.style.backgroundColor = `${colores[i]["new"]}`;
@@ -79,7 +84,7 @@ const pathDecide = async(count) => {
 
 
 
-async function delay(time){
+async function delay(time) {
     return await new Promise((resolve) => {
         setTimeout(resolve, time);
     });
@@ -87,28 +92,25 @@ async function delay(time){
 
 
 colorPart.forEach((element) => {
-    element.addEventListener("click", async(e) => {
-        if(pathGeneratorBool){
+    element.addEventListener("click", async (e) => {
+        if (pathGeneratorBool) {
             return false;
         }
-        if(e.target.classList[0] == coloresRamdom[clickCount]){
-            e.target.style.backgroundColor = `${colores[coloresRamdom[clickCount]]["new"]
-
-            }`;
+        const colorClass = e.target.classList[0];
+        if (colorClass == coloresRamdom[clickCount]) {
+            e.target.style.backgroundColor = `${colores[coloresRamdom[clickCount]]["new"]}`;
+            sonidos[colorClass].currentTime = 0;
+            sonidos[colorClass].play();
             await delay(500);
-
-            e.target.style.backgroundColor = `${colores[coloresRamdom[clickCount]]["current"]
-
-            }`;
-            
+            e.target.style.backgroundColor = `${colores[coloresRamdom[clickCount]]["current"]}`;
             clickCount += 1;
 
-            if(clickCount == count) {
+            if (clickCount == count) {
                 clickCount = 0;
                 pathGenerate();
             }
         }
-        else{
+        else {
             perder();
         }
     });
