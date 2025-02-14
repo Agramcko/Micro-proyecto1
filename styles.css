@@ -20,7 +20,7 @@ Body {
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    border-radius: 0.5em;
+    border-radius: 10em;
 }
 
 .simonsays {
@@ -83,18 +83,18 @@ Body {
 }
 
 #count {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     font-size: 2.5em;
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
     z-index: 1;
-    height: 2em;
+    height: 3em;
     width: 3em;
     display: grid;
     place-items: center;
-    border-radius: 0.5em;
+    border-radius: 100%;
 }
 
 .oculto {
