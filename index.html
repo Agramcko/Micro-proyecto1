@@ -15,8 +15,22 @@
 <body>
     <div class="contenedor">
         <p id="resultado" class="oculto">Mensaje</p>
+        <label for="nombre">Ingresa tu nombre:</label>
+        <input type="text" id="nombre">
         <button id="empezar">Empezar Juego</button>
+        <div id="highScores" class="oculto">
+            <h2>Mejores Puntajes</h2>
+            <table id="highScoresTable">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Victorias</th>
+                </tr>
+            </table>
+            <button id="resetScores">Reiniciar Puntajes</button>
+        </div>
     </div>
+
+
     <div class="envuelto oculto">
         <div class="simonsays">
             <div class="verde color-part"></div>
@@ -27,18 +41,11 @@
         </div>
     </div>
 
+
     <audio id="sonido-verde" src="Sonidos/man-says-green-188242.mp3"></audio>
     <audio id="sonido-rojo" src="Sonidos/man-says-red-202183.mp3"></audio>
     <audio id="sonido-azul" src="Sonidos/man-says-blue-188234.mp3"></audio>
     <audio id="sonido-amarillo" src="Sonidos/man-says-yellow-188247.mp3"></audio>
-
-
-
-
-
-
-
-
 
     <script src="script.js"></script>
 </body>

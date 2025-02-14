@@ -4,6 +4,7 @@ const contenedor = document.querySelector(".contenedor");
 const empezarButton = document.querySelector("#empezar");
 const resultado = document.querySelector("#resultado");
 const envuelto = document.querySelector(".envuelto");
+const highScoresContainer = document.getElementById("highScores");
 
 const sonidos = {
     verde: document.getElementById("sonido-verde"),
@@ -40,16 +41,41 @@ let count,
 
 
 empezarButton.addEventListener("click", () => {
+    const nombre = document.getElementById('nombre').value;
+    if (nombre === "") {
+        alert("Por favor, ingresa un nombre.");
+        return;
+    }
+
+    localStorage.setItem("currentUser", nombre);
     count = 0;
     clickCount = 0;
     coloresRamdom = [];
     pathGeneratorBool = false;
     envuelto.classList.remove("oculto");
     contenedor.classList.add("oculto");
+    highScoresContainer.classList.add("oculto");
     pathGenerate();
-})
+    loadHighScores();
+});
 
+document.getElementById('resetScores').addEventListener('click', resetHighScores);
 
+function resetHighScores() {
+    if (confirm("¿Estás seguro de que deseas reiniciar todos los puntajes?")) {
+        // Eliminar todos los elementos de localStorage excepto el currentUser
+        for (let i = localStorage.length - 1; i >= 0; i--) {
+            const key = localStorage.key(i);
+            if (key !== "currentUser") {
+                localStorage.removeItem(key);
+            }
+        }
+
+        // Actualizar la tabla de puntajes
+        loadHighScores();
+        alert("¡Los puntajes han sido reiniciados!");
+    }
+}
 
 
 const pathGenerate = () => {
@@ -123,5 +149,27 @@ const perder = () => {
     envuelto.classList.add("oculto");
     empezarButton.innerText = "Jugar Otra vez";
     empezarButton.classList.remove("oculto");
+
+    const nombre = localStorage.getItem("currentUser");
+    let victorias = localStorage.getItem(nombre) || 0;
+    victorias++;
+    localStorage.setItem(nombre, victorias);
+
+    loadHighScores();
+    highScoresContainer.classList.remove("oculto");
 };
 
+
+function loadHighScores() {
+    const highScoresTable = document.getElementById('highScoresTable');
+    highScoresTable.innerHTML = "<tr><th>Nombre</th><th>Victorias</th></tr>";
+
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key !== "currentUser") {
+            const victorias = localStorage.getItem(key);
+            const row = `<tr><td>${key}</td><td>${victorias}</td></tr>`;
+            highScoresTable.innerHTML += row;
+        }
+    }
+}
